@@ -1,4 +1,4 @@
-import React, { forwardRef, FC, Fragment, Ref } from "react";
+import React, { forwardRef, Fragment, Ref } from "react";
 
 interface SearchProps {
   onChange: (value: string) => void;
@@ -10,7 +10,14 @@ interface SearchProps {
 }
 
 function Search(
-  { onChange, placeholder, prefix, value, cancelIcon: CancelIcon, searchIcon: SearchIcon }: SearchProps,
+  {
+    onChange,
+    placeholder,
+    prefix,
+    value,
+    cancelIcon: CancelIcon,
+    searchIcon: SearchIcon,
+  }: SearchProps,
   ref: Ref<HTMLInputElement>
 ) {
   return (

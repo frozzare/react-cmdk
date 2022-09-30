@@ -43,7 +43,7 @@ function CommandPalette({
   search,
   page,
   searchIcon,
-  cancelIcon
+  cancelIcon,
 }: CommandPaletteProps) {
   const inputRef = useRef<HTMLInputElement>(null);
 
