@@ -1,11 +1,14 @@
 <img width="750" src="https://res.cloudinary.com/albin-groen/image/upload/v1654800612/react-cmdk-og_yyd4kb.png" />
 
+## This is a fork. Don't use it.
+
+Use the original version [instead](https://github.com/albingroen/react-cmdk).
+
 # A command palette for React
 
 A package with components for building your dream command palette for your web application.
 
 Watch the [YouTube demo](https://www.youtube.com/watch?v=FN8noNclyoU) or [try it out here](https://react-cmdk.com) to get started.
-
 
 - [Features](#features)
 - [Installation](#installation)

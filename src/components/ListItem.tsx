@@ -1,4 +1,3 @@
-import Icon, { IconType } from "./Icon";
 import React, {
   AnchorHTMLAttributes,
   ButtonHTMLAttributes,
@@ -8,7 +7,7 @@ import React, {
   ReactNode,
   useContext,
 } from "react";
-import { IconName, RenderLink } from "../types";
+import { RenderLink } from "../types";
 import { OpenContext, RenderLinkContext, SelectContext } from "../lib/context";
 import { classNames } from "../lib/utils";
 
@@ -28,8 +27,7 @@ function getListItemWrapperStyles(selected: boolean, disabled?: boolean) {
 
 interface ListItemBaseProps {
   closeOnSelect?: boolean;
-  icon?: FC | IconName;
-  iconType?: IconType;
+  icon?: FC;
   showType?: boolean;
   disabled?: boolean;
   keywords?: string[];
@@ -51,7 +49,6 @@ export function Link({
   disabled = false,
   showType = true,
   className,
-  iconType,
   children,
   onClick,
   index,
@@ -66,11 +63,7 @@ export function Link({
 
   function renderLinkContent() {
     return (
-      <ListItemContent
-        type={showType ? "Link" : undefined}
-        iconType={iconType}
-        icon={icon}
-      >
+      <ListItemContent type={showType ? "Link" : undefined} icon={icon}>
         {children}
       </ListItemContent>
     );
@@ -129,7 +122,6 @@ export function Button({
   showType = true,
   className,
   children,
-  iconType,
   onClick,
   index,
   icon,
@@ -159,11 +151,7 @@ export function Button({
         className
       )}
     >
-      <ListItemContent
-        type={showType ? "Action" : undefined}
-        iconType={iconType}
-        icon={icon}
-      >
+      <ListItemContent type={showType ? "Action" : undefined} icon={icon}>
         {children}
       </ListItemContent>
     </button>
@@ -171,27 +159,20 @@ export function Button({
 }
 
 interface ListItemContentProps {
-  icon?: FC<any> | IconName;
-  iconType?: IconType;
+  icon?: FC<any>;
   children: ReactNode;
   type?: ListItemType;
 }
 
 function ListItemContent({
   icon: ListItemIcon,
-  iconType,
   children,
   type,
 }: ListItemContentProps) {
   return (
     <>
       <div className="flex w-full items-center space-x-2.5">
-        {ListItemIcon &&
-          (typeof ListItemIcon === "string" ? (
-            <Icon name={ListItemIcon as IconName} type={iconType} />
-          ) : (
-            <ListItemIcon className="w-5 h-5 text-gray-500" />
-          ))}
+        {ListItemIcon && <ListItemIcon className="w-5 h-5 text-gray-500" />}
 
         {typeof children === "string" ? (
           <span className="truncate max-w-md dark:text-white">{children}</span>

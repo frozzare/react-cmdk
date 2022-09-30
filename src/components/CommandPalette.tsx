@@ -1,5 +1,4 @@
 import FreeSearchAction from "./FreeSearchAction";
-import Icon from "./Icon";
 import List from "./List";
 import ListItem from "./ListItem";
 import Page from "./Page";
@@ -236,7 +235,6 @@ function CommandPalette({
 CommandPalette.Page = Page;
 CommandPalette.List = List;
 CommandPalette.ListItem = ListItem;
-CommandPalette.Icon = Icon;
 CommandPalette.FreeSearchAction = FreeSearchAction;
 
 export default CommandPalette;

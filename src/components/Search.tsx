@@ -1,21 +1,23 @@
-import React, { forwardRef, Fragment, Ref } from "react";
-import { SearchIcon } from "@heroicons/react/outline";
-import { XCircleIcon } from "@heroicons/react/solid";
+import React, { forwardRef, FC, Fragment, Ref } from "react";
 
 interface SearchProps {
   onChange: (value: string) => void;
   placeholder?: string;
   prefix?: string[];
   value: string;
+  SearchIcon?: any;
+  CancelIcon?: any;
 }
 
 function Search(
-  { onChange, placeholder, prefix, value }: SearchProps,
+  { onChange, placeholder, prefix, value, CancelIcon, SearchIcon }: SearchProps,
   ref: Ref<HTMLInputElement>
 ) {
   return (
     <div className="flex items-center space-x-1.5 pl-3">
-      <SearchIcon className="w-4 pointer-events-none text-gray-400 dark:text-gray-600" />
+      {SearchIcon && (
+        <SearchIcon className="w-4 pointer-events-none text-gray-400 dark:text-gray-600" />
+      )}
 
       {prefix?.length
         ? prefix.map((p) => {
@@ -67,7 +69,9 @@ function Search(
               }
             }}
           >
-            <XCircleIcon className="w-5 text-gray-300 dark:text-gray-600 hover:text-gray-500 dark:hover:text-gray-300 transition absolute right-3 top-1/2 transform -translate-y-1/2" />
+            {CancelIcon && (
+              <CancelIcon className="w-5 text-gray-300 dark:text-gray-600 hover:text-gray-500 dark:hover:text-gray-300 transition absolute right-3 top-1/2 transform -translate-y-1/2" />
+            )}
           </button>
         )}
       </div>

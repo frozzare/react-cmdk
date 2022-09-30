@@ -1,3 +1,4 @@
+import React from "react";
 import CommandPalette, {
   JsonStructure,
   filterItems,
@@ -44,7 +45,7 @@ const Template: Story<any> = () => {
       items: [
         {
           children: "Home",
-          icon: "HomeIcon",
+          icon: () => <span>AF</span>,
           id: "home",
           disabled: true,
           href: "#",
@@ -52,13 +53,13 @@ const Template: Story<any> = () => {
         },
         {
           children: "Settings",
-          icon: "CogIcon",
+          icon: () => <span>AF</span>,
           id: "settings",
           disabled: true,
         },
         {
           children: "Positions",
-          icon: "BriefcaseIcon",
+          icon: () => <span>AF</span>,
           closeOnSelect: false,
           keywords: ["jobs"],
           id: "positions",
@@ -69,7 +70,7 @@ const Template: Story<any> = () => {
         },
         {
           children: "Candidates",
-          icon: "UsersIcon",
+          icon: () => <span>AF</span>,
           id: "users",
           onClick: () => {
             alert("hj");
@@ -84,7 +85,7 @@ const Template: Story<any> = () => {
         {
           href: "https://google.com",
           children: "Help",
-          icon: "SupportIcon",
+          icon: () => <span>AF</span>,
           id: "support",
           target: "_blank",
           rel: "noopener noreferrer",
@@ -97,22 +98,22 @@ const Template: Story<any> = () => {
       items: [
         {
           children: "Privacy policy",
-          icon: "FlagIcon",
+          icon: () => <span>AF</span>,
           id: "privacy",
         },
         {
           children: "User agreement",
-          icon: "UserIcon",
+          icon: () => <span>AF</span>,
           id: "user-agreement",
         },
         {
           children: "About",
-          icon: "EyeIcon",
+          icon: () => <span>AF</span>,
           id: "about",
         },
         {
           children: "Career",
-          icon: "UsersIcon",
+          icon: () => <span>AF</span>,
           id: "career",
         },
       ],
