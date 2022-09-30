@@ -1,6 +1,6 @@
 {
   "name": "@frozzare/react-cmdk",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "A fast, accessible, and pretty React.js command palette (fork)",
   "homepage": "https://react-cmdk.com",
   "main": "dist/index.js",

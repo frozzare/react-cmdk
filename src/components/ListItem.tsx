@@ -27,7 +27,7 @@ function getListItemWrapperStyles(selected: boolean, disabled?: boolean) {
 
 interface ListItemBaseProps {
   closeOnSelect?: boolean;
-  icon?: FC;
+  icon?: any;
   showType?: boolean;
   disabled?: boolean;
   keywords?: string[];

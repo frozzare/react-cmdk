@@ -26,6 +26,8 @@ interface CommandPaletteProps {
   isOpen: boolean;
   search: string;
   page?: string;
+  searchIcon?: any;
+  cancelIcon?: any;
 }
 
 function CommandPalette({
@@ -40,6 +42,8 @@ function CommandPalette({
   footer,
   search,
   page,
+  searchIcon,
+  cancelIcon
 }: CommandPaletteProps) {
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -196,6 +200,8 @@ function CommandPalette({
                         prefix={searchPrefix}
                         value={search}
                         ref={inputRef}
+                        searchIcon={searchIcon}
+                        cancelIcon={cancelIcon}
                       />
                     </PageContext.Provider>
 

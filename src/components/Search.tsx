@@ -5,12 +5,12 @@ interface SearchProps {
   placeholder?: string;
   prefix?: string[];
   value: string;
-  SearchIcon?: any;
-  CancelIcon?: any;
+  searchIcon?: any;
+  cancelIcon?: any;
 }
 
 function Search(
-  { onChange, placeholder, prefix, value, CancelIcon, SearchIcon }: SearchProps,
+  { onChange, placeholder, prefix, value, cancelIcon: CancelIcon, searchIcon: SearchIcon }: SearchProps,
   ref: Ref<HTMLInputElement>
 ) {
   return (
